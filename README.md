@@ -1,9 +1,9 @@
 # qloger
 
-Qlogger is a logger which rotates log file by date and size
+qloger is a logger which rotates log file by date and size
 
 ```bash
-go get github.com/domac/qlogger
+go get github.com/domac/qloger
 ```
 
 ### Examples
