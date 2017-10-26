@@ -8,7 +8,7 @@ go get github.com/domac/qlogger
 
 ### Examples
 
-1. normal logger
+1. normal logger example
 
 ```go
 func main() {
@@ -21,7 +21,7 @@ func main() {
 rotates
 ```
 
- 2. rotatable log 
+ 2. rotatable log example
 
 ```go
 func main() {
