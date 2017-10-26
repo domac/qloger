@@ -6,7 +6,22 @@ Qlogger is a logger which rotates log file by date and size
 go get github.com/domac/qlogger
 ```
 
-examples
+### Examples
+
+1. normal logger
+
+```go
+func main() {
+    logger, err := NewQLogger("/tmp/test.log", "info")
+	if err != nil {
+        return
+    }
+    logger.Infoln("hello")
+}
+rotates
+```
+
+ 2. rotatable log 
 
 ```go
 func main() {
