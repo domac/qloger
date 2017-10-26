@@ -9,14 +9,13 @@ go get github.com/domac/qlogger
 examples
 
 ```go
-
 func main() {
     maxSize := 1024 * 1024 *1024 //1G
-	logger, err := NewRotatorQLogger("/tmp/test.log", "debug", true, false, true, maxSize)
+    logger, err := NewRotatorQLogger("/tmp/test.log", "debug", true, false, true, maxSize)
 	if err != nil {
         return
-	}
-	logger.Infoln("hello")
+    }
+    logger.Infoln("hello")
 }
 
 ```
