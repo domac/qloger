@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	TimeFormat = "2006-01"
+	TimeFormat = "2006-01-02_1504"
 )
 
 type Options struct {
@@ -119,9 +119,14 @@ func (w *RotatingWriter) Write(b []byte) (int, error) {
 }
 
 func (w *RotatingWriter) rotateClear() error {
-	original := w.file.Name()
-	w.currentSize = 0
-	return os.Truncate(original, 0)
+
+	if w.opts.RotateDaily {
+		return w.rotate()
+	} else {
+		original := w.file.Name()
+		w.currentSize = 0
+		return os.Truncate(original, 0)
+	}
 }
 
 func (w *RotatingWriter) rotate() error {

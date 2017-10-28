@@ -2,6 +2,7 @@ package qloger
 
 import (
 	"testing"
+	"time"
 )
 
 func TestDefaultLogOutput(t *testing.T) {
@@ -14,10 +15,13 @@ func TestDefaultLogOutput(t *testing.T) {
 }
 
 func TestRotatorLogOutput(t *testing.T) {
-	logger, err := NewRotatorQLogger("/tmp/test.log", "debug", true, false, true, 1024*5)
+	logger, err := NewRotatorQLogger("/tmp/test.log", "debug", true, true, true, 1024*5)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
 
-	logger.Infoln("hello")
+	for i := 0; i < 1000; i++ {
+		logger.Infoln("hello")
+		time.Sleep(80 * time.Millisecond)
+	}
 }
