@@ -22,6 +22,6 @@ func TestRotatorLogOutput(t *testing.T) {
 
 	for i := 0; i < 1000; i++ {
 		logger.Infoln("hello")
-		time.Sleep(80 * time.Millisecond)
+		time.Sleep(50 * time.Millisecond)
 	}
 }
